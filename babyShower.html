@@ -7,7 +7,9 @@
 		<title>Title Page</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
 
 		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
@@ -32,78 +34,156 @@
 		right:20%;
 		margin:20px;
 	}*/
+.container {
+	margin:0px;
+}
+p {
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+	color:#FFF;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.75);
+}
+p::before{
 
+}
 #fullBody {
-	border: 1px black solid;
-	border-radius: 5px;
+	border: 1px ;
+	border-radius: 100px;
 	position:absolute;
 	top:10%;
 	left:5%;
 	right:5%;
 	bottom:10%;
 	background-color:#61b18c;
-	font-family: 'Pacifico', cursive;
+
 
 }
-
+#titleText p {
+	font-size: 60px;
+	margin:0px;
+	padding:0px;
+	position:relative;
+	top:40px;
+}
 
 #popBG {
-	border: 1px black solid;
-	
+	border: 1px ;
+	position: relative;
+	top:80px;
+	margin:0px;
+	max-height: auto;
+	width:100%;
 	
 	
 }
 
 #popBGleft {
-	border:1px black solid;
+	border:1px;
 	margin: 4px,7px,4px,7px;
 	float:left;
 	width:59%;
-
+	color:black;
 
 }
-
+/*#popBGleft p {
+	color:black;
+}*/
+#preLocation {
+	font-size:40px;
+	position: relative;
+	top:30px;
+	padding:0px;
+	margin:0px;
+	/*color:black;*/
+}
+.preBet {
+	font-size: 30px;
+	margin:0px;
+	padding:0px;
+	position:relative;
+	top:-25px;
+}
+.preBet2 {
+	font-size: 30px;
+	margin:0px;
+	padding:0px;
+	position:relative;
+	top:-65px;
+}
+.preDate {
+	position:relative;
+	top:-45px;
+}
+.preDate2 {
+	position:relative;
+	top:-75px;
+}
 #popBGright {
-	border:1px black solid;
+	border:1px;
+	border-radius:4px;
 	margin: 4px,7px,4px,7px;
 	float:right;
 	width:40%;
+	max-height:100%;
+	padding:0px;
 }
 #popBGright img {
-	height:auto;
-	width:auto;
+	max-width: 100%;
+	max-height:100%;
+	border:1px;
+	border-radius:20px;
+	position:relative;
+	top:50px;
+}
+
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+	margin:0;
+	padding:0;
+	border:none;
+	border-spacing:0;
 }
 	</style>
 
 	<body>
 		<div id='fullBody'>
-
-		<h1 class="text-center">Mary's And Eric's Baby Shower!</h1>
+		<div id="titleText">
+		<p class="text-center">You're invited to!</p>
+		</div>
 		<div class="container">
 			<div id='popBG' class="col-md-1">
 				<div id='popBGleft'>
 
-				<p>
-					<!-- start slipsum code -->
-
-					Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
-
-					<!-- please do not remove this line -->
-
-					<div style="display:none;">
-					<a href="http://slipsum.com">lorem ipsum</a></div>
-
-					<!-- end slipsum code -->
+				<p class='text-center'>
+					Bottles and booties
+					<br> 
+					and bibs and more,
+					<br> 
+					let's shower the baby
+					<br> 
+					with gifts galore!<br> 
+					Please come to a baby shower for<br> 
 
 				</p>
-				<div id='calendar'>
+				
+				<p id='preLocation' class='text-center'>Mary's and Eric's<br>Baby Shower!<br>
+					<span class='preBet'>on</span><br>
+					<span class='preDate'>March (insert date here)</span><br>
+					<span class='preBet2'>at</span><br>
+					<span class='preDate2'>ADDRESS HERE</span></p>
 
-					<!-- Must add calendar code, basic tutorial here http://designmodo.com/calendar-jquery-css3/  -->
+					
+				<!-- <div id='calendar'>
 
+					Must add calendar code, basic tutorial here http://designmodo.com/calendar-jquery-css3/ 
+
+				</div> -->
 				</div>
-				</div>
-				<div id='popBGright'>
-					<img src="http://placekitten.com/400/600"></img>
+				<div id='popBGright' class='container col-md-2'>
+					<img src="img/marypic.jpg"></img>
 				</div>
 
 			</div>
@@ -111,9 +191,19 @@
 		
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	
+
+		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="..//js/jquery-ui.js"></script>
+		<script>
+			$('#calendar').datepicker({
+				firstDay: 1,
+				dayNamesMin: ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']
+
+			});
+			</script>
+
 	</div>
 	</body>
 </html>
