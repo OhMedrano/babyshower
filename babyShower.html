@@ -143,8 +143,109 @@ p::before{
 .ui-datepicker th {
 	margin:0;
 	padding:0;
-	border:none;
+	border:1px white;
 	border-spacing:0;
+	border-radius:1;
+}
+.ui-datepicker {
+    display: none;
+    width: 294px;
+    padding: 35px;
+    cursor: default;
+ 	
+    text-transform: uppercase;
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+ 	color:white;
+   /* background: #141517;*/
+ 
+   /* -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+ 
+    -webkit-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
+    -moz-box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);
+    box-shadow: 0px 1px 1px rgba(255,255,255, .1), inset 0px 1px 1px rgb(0,0,0);*/
+}
+/*.ui-datepicker-month:before {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    content: '';
+ 
+    background: #a5cd4e;
+    background: -moz-linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5cd4e), color-stop(100%,#6b8f1a));
+    background: -webkit-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+    background: -o-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+    background: -ms-linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+    background: linear-gradient(top, #a5cd4e 0%,#6b8f1a 100%);
+ 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}*/
+.ui-datepicker-prev,
+.ui-datepicker-next {
+	display:none;
+}
+.ui-datepicker-title {
+	position:relative;
+	left:120px;
+	margin:0px;
+}
+.ui-datepicker th span {
+	margin:5px;
+}
+
+.ui-datepicker-calendar th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+ 	margin:5px;
+    text-align: center;
+    font-weight: normal;
+    /*color: #a8a8a8;*/
+
+}
+
+.ui-datepicker-calendar td {
+    padding: 0 7px;
+ 
+    text-align: center;
+    line-height: 26px;
+}
+ 
+.ui-datepicker-calendar .ui-state-default {
+    display: block;
+    width: 26px;
+    outline: none;
+ 
+    text-decoration: none;
+    color: white;
+ 
+    border: 1px solid transparent;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    color: #6a9113;
+    border: 1px solid #6a9113;
+}
+ 
+.ui-datepicker-other-month .ui-state-default { color: #565656; }
+
+.ui-datepicker-calendar td {
+	font-size: 35px;
+}
+
+#calendar {
+	position:relative;
+	left:60px;
+	top:-25px;
+	border:1px white solid;
+
 }
 	</style>
 
@@ -169,18 +270,18 @@ p::before{
 
 				</p>
 				
-				<p id='preLocation' class='text-center'>Mary's and Eric's<br>Baby Shower!<br>
+				<!-- <p id='preLocation' class='text-center'>Mary's and Eric's<br>Baby Shower!<br>
 					<span class='preBet'>on</span><br>
 					<span class='preDate'>March (insert date here)</span><br>
 					<span class='preBet2'>at</span><br>
 					<span class='preDate2'>ADDRESS HERE</span></p>
 
-					
-				<!-- <div id='calendar'>
+					 -->
+					<div id='calendar' class='text-center'>
+	<!-- 
+						Must add calendar code, basic tutorial here http://designmodo.com/calendar-jquery-css3/  -->
 
-					Must add calendar code, basic tutorial here http://designmodo.com/calendar-jquery-css3/ 
-
-				</div> -->
+					</div>
 				</div>
 				<div id='popBGright' class='container col-md-2'>
 					<img src="img/marypic.jpg"></img>
@@ -198,10 +299,18 @@ p::before{
 		<script src="..//js/jquery-ui.js"></script>
 		<script>
 			$('#calendar').datepicker({
+				inline:true,
 				firstDay: 1,
 				dayNamesMin: ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']
 
 			});
+			$('tr th:nth-child(4)').empty();
+			$('tr th:nth-child(4)').append('Thu');
+			
+
+
+			$('tr:nth-child(4) td:nth-child(5)').hasClass('ui-state-default').removeClass('ui-state-default');
+			$('tr:nth-child(5) td:nth-child(6)').addClass('ui-state-default');
 			</script>
 
 	</div>
